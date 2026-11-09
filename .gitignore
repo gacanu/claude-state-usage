@@ -1,0 +1,7 @@
+# Source data stays out of the repository (the full file is ~209 MB).
+*.csv
+*.csv.gz
+*.zip
+
+node_modules/
+.DS_Store

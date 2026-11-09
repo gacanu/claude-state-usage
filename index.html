@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude.ai Use by State</title>
+  <meta name="description" content="Which US states use Claude.ai more than expected for their population? A map of the usage per capita index, May 2026, from the Anthropic Economic Index.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='13' height='13' rx='3' fill='%230d366b'/%3E%3Crect x='17' y='2' width='13' height='13' rx='3' fill='%231c5cab'/%3E%3Crect x='2' y='17' width='13' height='13' rx='3' fill='%233987e5'/%3E%3Crect x='17' y='17' width='13' height='13' rx='3' fill='%2386b6ef'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">Claude.ai use by state · May 2026</p>
+      <h1>D.C. and 15 states use Claude.ai more than their population predicts</h1>
+      <p class="lede">An index of 1.0 means a state’s share of US Claude.ai use equals its share of US working-age people (ages 15 to 64), so D.C.’s 3.32 is more than three times its expected share.</p>
+    </header>
+
+    <div class="layout">
+      <section class="card map-card" aria-labelledby="map-title">
+        <h2 id="map-title">Usage per capita index, 50 states and D.C.</h2>
+        <p class="hint">Colored by rank. Hover over or tap a state to see its value.</p>
+        <ul class="legend" id="legend" aria-label="Rank groups"></ul>
+        <div class="map" id="map">
+          <p class="status" id="map-status">Loading the map…</p>
+        </div>
+        <div class="small-states">
+          <span class="small-states-label" id="small-label">Small states</span>
+          <div class="chips" id="chips" role="group" aria-labelledby="small-label"></div>
+        </div>
+      </section>
+
+      <section class="card top-card" aria-labelledby="top-title">
+        <h2 id="top-title">Top 10, counting D.C.</h2>
+        <p class="hint">Index value. The line marks 1.0, the expected level.</p>
+        <div class="top10-axis" aria-hidden="true"><span></span><span></span><span class="track" id="top10-axis"></span></div>
+        <ol class="top10" id="top10"></ol>
+      </section>
+    </div>
+
+    <details class="card all-values">
+      <summary>All 51 values</summary>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Rank</th><th scope="col">State</th><th scope="col" class="num">Index</th><th scope="col">Group</th></tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </details>
+
+    <footer class="source">
+      <p><strong>Source:</strong> <a href="https://www.anthropic.com/research/economic-index-june-2026-report">Anthropic Economic Index</a>, Claude.ai conversations on the Free, Pro and Max plans, May 2026, released June 26, 2026, under CC BY.</p>
+      <p>Groups split the 51 places by rank into 13, 13, 13 and 12. Index values are rounded to two decimals, as published. Map shapes: US Census Bureau, via us-atlas.</p>
+    </footer>
+  </main>
+
+  <div class="tooltip" id="tooltip" role="status" aria-live="polite" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

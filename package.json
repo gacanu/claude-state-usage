@@ -1,0 +1,14 @@
+{
+  "name": "claude-state-usage",
+  "private": true,
+  "type": "module",
+  "description": "Which US states use Claude.ai more than expected for their population? A one-page map.",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "build:map": "node scripts/build-map.mjs"
+  },
+  "devDependencies": {
+    "d3-geo": "3.1.1",
+    "topojson-client": "3.1.0"
+  }
+}
